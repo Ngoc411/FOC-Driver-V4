@@ -1,15 +1,15 @@
 # FOC Driver V4
 
-Firmware for a custom **BLDC motor-control board** based on the **STM32G474RET6 MCU**. The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM (SVPWM)** and supports current, speed, and position control.
+Firmware for a custom **BLDC motor-control board** based on the **STM32G474RET6 MCU**. The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM (SVPWM)** and provides three independent control modes: **current, speed, and position control**.
 
-The board is designed as a compact motor-control platform for robotic actuators and other motion-control applications.
+The controller is designed as a compact motor-control platform for robotic actuators and other motion-control applications. Motor position is measured using an **MT6816 magnetic encoder**, while an external controller can communicate with the board through **Classical CAN**.
 
 ---
 
 ## Features
 
 * **BLDC motor control** using FOC + SVPWM
-* Three control modes:
+* Three independent control modes:
 
   * **Current control** — A
   * **Speed control** — rad/s
@@ -17,6 +17,7 @@ The board is designed as a compact motor-control platform for robotic actuators 
 * **MT6816 magnetic encoder** for rotor position feedback
 * **20 kHz motor-control loop**
 * **Classical CAN** communication up to **1 Mbps**
+* **DRV8323S** three-phase gate driver
 * Hardware PWM generation using STM32 timers
 * Current sensing and closed-loop current control
 * Designed for integration with external controllers and robotic systems
@@ -35,20 +36,22 @@ The board is designed as a compact motor-control platform for robotic actuators 
               ┌───────────────────┐
               │   STM32G474RET6   │
               │                   │
-              │ Position Control/ │
-              │  Speed Control/   │
-              │ Current Control/  │
-              │         ↓         │
+              │ Position Control  │
+              │ Speed Control     │
+              │ Current Control   │
+              │        ↓          │
               │       FOC         │
-              │         ↓         │
-              │     SVPWM         │
+              │        ↓          │
+              │      SVPWM        │
               └─────────┬─────────┘
                         │
                    3-Phase PWM
                         │
                         ▼
-                 Gate Driver /
-                 Power Stage
+                    DRV8323S
+                        │
+                        ▼
+                 3-Phase Inverter
                         │
                         ▼
                    BLDC Motor
@@ -61,9 +64,15 @@ The board is designed as a compact motor-control platform for robotic actuators 
 
 ## Control Architecture
 
-## Control Architecture
+The firmware provides three **independent control modes**. The user selects the required mode depending on the application.
 
-The firmware provides three independent control modes. Each mode generates a current command that is passed directly to the current controller.
+In **current control**, the commanded current is directly regulated by the current controller, providing direct control of the motor's torque-producing current.
+
+In **speed control**, the commanded speed is compared with the measured motor speed from the encoder. The speed controller generates a current command, which is then passed directly to the current-control loop.
+
+In **position control**, the commanded position is compared with the encoder position. The position controller generates a current command, which is also passed directly to the current-control loop.
+
+There is no speed-control layer between position control and current control; both speed and position modes independently generate the current command required by the common motor-control stage.
 
 ```text
 ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
@@ -83,25 +92,26 @@ The firmware provides three independent control modes. Each mode generates a cur
                              Motor
 ```
 
-This allows the same controller to operate either as a direct torque/current controller or as a higher-level position-controlled actuator.
+The common FOC stage converts the desired current into the required motor voltage vector and generates the corresponding three-phase PWM signals through SVPWM.
 
 ---
 
 ## Hardware
 
-| Component         | Description             |
-| ----------------- | ----------------------- |
-| MCU               | STM32G474RET6           |
-| Motor             | 3-phase BLDC            |
-| Encoder           | MT6816 magnetic encoder |
-| Driver            | DRV8323S                |
-| Communication     | SN65HVD230              |
+| Component       | Description                 |
+| --------------- | --------------------------- |
+| MCU             | STM32G474RET6               |
+| Motor           | 3-phase BLDC                |
+| Encoder         | MT6816 magnetic encoder     |
+| Gate Driver     | DRV8323S                    |
+| CAN Transceiver | SN65HVD230                  |
+| Communication   | Classical CAN, up to 1 Mbps |
 
 ---
 
 ## Firmware Structure
 
-The firmware is organized into separate modules for motor control, feedback, communication, and hardware drivers.
+The firmware is separated into motor-control, feedback, communication, and hardware-driver modules.
 
 ```text
 FOC-Driver-V4/
@@ -111,31 +121,47 @@ FOC-Driver-V4/
 ├── lib/
 │   ├── CAN/
 │   ├── MT6816/
-│   └── Coefficients/
+│   ├── Coefficients/
 │   └── ...
 │
 └── ...
 ```
 
-The modular structure makes it easier to maintain the motor-control algorithm and integrate additional peripherals or control features.
+The modular structure allows the motor-control algorithms and hardware interfaces to be developed and maintained independently.
 
 ---
 
-## Applications
+## Results
 
-The controller is intended for applications such as:
+The following videos demonstrate the motor controller operating with the different control modes.
 
-* Robotic actuators
-* Humanoid robots
-* Multi-axis motion systems
-* BLDC servo systems
-* General embedded motor-control applications
+### Current Control
 
----
+Demonstration of direct current control and the resulting motor response.
 
-## Technologies
+**Current control demonstration:**
 
-`C` · `STM32G4` · `FOC` · `SVPWM` · `BLDC` · `CAN` · `SPI` · `ADC` · `PWM` · `MT6816`
+`current_control.mov`
+
+### Speed Control
+
+Demonstration of closed-loop speed control using feedback from the MT6816 encoder.
+
+**Speed control demonstration:**
+
+`speed_control.mov`
+
+### Position Control
+
+Demonstration of closed-loop position control using the MT6816 encoder.
+
+**Position control demonstration:**
+
+`position_control.mov`
+
+> **Note:** For reliable playback directly on GitHub, `.mp4` is recommended over `.mov`. If the videos are stored in the repository, replace the filenames above with the actual paths, for example:
+>
+> `![Speed Control](./results/speed_control.mp4)`
 
 ---
 
