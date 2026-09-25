@@ -35,14 +35,12 @@ The board is designed as a compact motor-control platform for robotic actuators 
               ┌───────────────────┐
               │   STM32G474RET6   │
               │                   │
-              │ Position Control │
-              │       ↓           │
-              │  Speed Control   │
-              │       ↓           │
-              │ Current Control  │
-              │       ↓           │
+              │ Position Control/ │
+              │  Speed Control/   │
+              │ Current Control/  │
+              │         ↓         │
               │       FOC         │
-              │       ↓           │
+              │         ↓         │
               │     SVPWM         │
               └─────────┬─────────┘
                         │
@@ -66,16 +64,10 @@ The board is designed as a compact motor-control platform for robotic actuators 
 The firmware uses a cascaded control structure:
 
 ```text
-Position Command
+Position Command                        Position Command
        │
        ▼
 Position Control
-       │
-       ▼
- Speed Command
-       │
-       ▼
- Speed Control
        │
        ▼
 Current Command
@@ -104,10 +96,8 @@ This allows the same controller to operate either as a direct torque/current con
 | MCU               | STM32G474RET6           |
 | Motor             | 3-phase BLDC            |
 | Encoder           | MT6816 magnetic encoder |
-| Motor Control     | FOC + SVPWM             |
-| Communication     | Classical CAN           |
-| Maximum CAN Speed | 1 Mbps                  |
-| Control Loop      | 10 kHz                  |
+| Driver            | DRV8323S                |
+| Communication     | SN65HVD230              |
 
 ---
 
@@ -124,6 +114,7 @@ FOC-Driver-V4/
 │   ├── CAN/
 │   ├── MT6816/
 │   └── Coefficients/
+│   └── ...
 │
 └── ...
 ```
