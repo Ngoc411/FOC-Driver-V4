@@ -133,37 +133,25 @@ The modular structure allows the motor-control algorithms and hardware interface
 
 ## Results
 
-The following videos demonstrate the motor controller operating with the different control modes.
+The following videos demonstrate the motor controller operating in the different control modes.
 
 ### Current Control
 
 Demonstration of direct current control and the resulting motor response.
 
-**Current control demonstration:**
-
-`current_control.mov`
+<video src="./results/current_control.mov" controls width="800"></video>
 
 ### Speed Control
 
 Demonstration of closed-loop speed control using feedback from the MT6816 encoder.
 
-**Speed control demonstration:**
-
-`speed_control.mov`
+<video src="./results/speed_control.mov" controls width="800"></video>
 
 ### Position Control
 
 Demonstration of closed-loop position control using the MT6816 encoder.
 
-**Position control demonstration:**
-
-`position_control.mov`
-
-> **Note:** For reliable playback directly on GitHub, `.mp4` is recommended over `.mov`. If the videos are stored in the repository, replace the filenames above with the actual paths, for example:
->
-> `![Speed Control](./results/speed_control.mp4)`
-
----
+<video src="./results/position_control.mov" controls width="800"></video>
 
 ## Author
 
