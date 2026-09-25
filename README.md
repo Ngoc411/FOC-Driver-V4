@@ -15,7 +15,7 @@ The board is designed as a compact motor-control platform for robotic actuators 
   * **Speed control** — rad/s
   * **Position control** — rad
 * **MT6816 magnetic encoder** for rotor position feedback
-* **10 kHz motor-control loop**
+* **20 kHz motor-control loop**
 * **Classical CAN** communication up to **1 Mbps**
 * Hardware PWM generation using STM32 timers
 * Current sensing and closed-loop current control
