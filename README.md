@@ -1,0 +1,1 @@
+This project desings a firmware for a custom board to control BLDC with FOC and SVPWM using STM32G474RET6 MCU. It includes 3 control mechanims: current control, speed control and position control, uini of each method is A, rad/s and rad. The board can communicate with peripheral device via classic CAN (maximum 1Mb/s).
