@@ -64,15 +64,15 @@ The controller is designed as a compact motor-control platform for robotic actua
 
 ## Control Architecture
 
-The firmware provides three **independent control modes**. The user selects the required mode depending on the application.
+The firmware provides three **independent control modes**, all based on **PID control**. The user selects the required mode depending on the application.
 
-In **current control**, the commanded current is directly regulated by the current controller, providing direct control of the motor's torque-producing current.
+In **current control**, a PID controller regulates the commanded current, providing direct control of the motor's torque-producing current.
 
-In **speed control**, the commanded speed is compared with the measured motor speed from the encoder. The speed controller generates a current command, which is then passed directly to the current-control loop.
+In **speed control**, the commanded speed is compared with the measured motor speed from the encoder. The **speed PID controller** generates a current command, which is then passed directly to the current-control loop.
 
-In **position control**, the commanded position is compared with the encoder position. The position controller generates a current command, which is also passed directly to the current-control loop.
+In **position control**, the commanded position is compared with the encoder position. The **position PID controller** generates a current command, which is also passed directly to the current-control loop.
 
-There is no speed-control layer between position control and current control; both speed and position modes independently generate the current command required by the common motor-control stage.
+The three modes share the same current-control and FOC/SVPWM stages, while **speed and position control independently generate the current command** without an intermediate control layer.
 
 ```text
 ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
@@ -111,19 +111,28 @@ The common FOC stage converts the desired current into the required motor voltag
 
 ## Firmware Structure
 
-The firmware is separated into motor-control, feedback, communication, and hardware-driver modules.
+The firmware is organized into dedicated libraries for motor control, encoder feedback, CAN communication, driver configuration, and other supporting functions. These modules are integrated by the main application in `Core/Src/main.c`, which handles initialization and coordinates the overall control flow.
 
 ```text
 FOC-Driver-V4/
 │
 ├── Core/
+│   └── Src/
+│       └── main.c
+│
 ├── USB_Device/
+│
 ├── lib/
 │   ├── CAN/
+│   ├── DRV8323/
+│   ├── FLASH/
+│   ├── FOC/
 │   ├── MT6816/
-│   ├── Coefficients/
+│   ├── Constants/
 │   └── ...
 │
+├── Drivers/
+├── Middlewares/
 └── ...
 ```
 
