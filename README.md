@@ -139,20 +139,18 @@ The following videos demonstrate the motor controller operating in the different
 
 Demonstration of direct current control and the resulting motor response.
 
-[https://github.com/user-attachments/assets/PASTE-YOUR-ASSET-ID-HERE](https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.mov)
+https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.mov
 
 ### Speed Control
 
 Demonstration of closed-loop speed control using feedback from the MT6816 encoder.
 
-https://github.com/user-attachments/assets/PASTE-YOUR-ASSET-ID-HERE
-
+https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.mov
 ### Position Control
 
 Demonstration of closed-loop position control using the MT6816 encoder.
 
-https://github.com/user-attachments/assets/PASTE-YOUR-ASSET-ID-HERE
-
+https://github.com/Ngoc411/FOC-Driver-V4/blob/main/position_ctrl.mov
 ## Author
 
 **Ngoc**
