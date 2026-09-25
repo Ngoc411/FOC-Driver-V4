@@ -139,7 +139,7 @@ The following videos demonstrate the motor controller operating in the different
 
 Demonstration of direct current control and the resulting motor response.
 
-https://github.com/user-attachments/assets/PASTE-YOUR-ASSET-ID-HERE
+[https://github.com/user-attachments/assets/PASTE-YOUR-ASSET-ID-HERE](https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.mov)
 
 ### Speed Control
 
