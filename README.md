@@ -66,12 +66,21 @@ The board is designed as a compact motor-control platform for robotic actuators 
 The firmware provides three independent control modes. Each mode generates a current command that is passed directly to the current controller.
 
 ```text
-Current Control ───────────────┐
+┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
+│ Current Control  │   │  Speed Control   │   │ Position Control │
+│                  │   │                  │   │                  │
+│ Current Command  │   │  Speed Command   │   │ Position Command │
+│       │          │   │       │          │   │       │          │
+└────────┬─────────┘   └───────┬──────────┘   └───────┬──────────┘
+         └─────────────────────┼──────────────────────┘
+                               ▼
+                        Current Command
                                │
-Speed Control ─────────────────┤
-                               ├──→ Current Control → FOC → SVPWM → Motor
+                               ▼
+                         FOC → SVPWM
                                │
-Position Control ──────────────┘
+                               ▼
+                             Motor
 ```
 
 This allows the same controller to operate either as a direct torque/current controller or as a higher-level position-controlled actuator.
