@@ -61,28 +61,18 @@ The board is designed as a compact motor-control platform for robotic actuators 
 
 ## Control Architecture
 
-The firmware uses a cascaded control structure:
+## Control Architecture
+
+The firmware provides three independent control modes. Each mode generates a current command that is passed directly to the current controller.
 
 ```text
-Position Command                        Position Command
-       │
-       ▼
-Position Control
-       │
-       ▼
-Current Command
-       │
-       ▼
- Current Control
-       │
-       ▼
-      FOC
-       │
-       ▼
-     SVPWM
-       │
-       ▼
-     Motor
+Current Command ───────────────┐
+                               │
+Speed Command → Speed Control ─┤
+                               ├──→ Current Control → FOC → SVPWM → Motor
+Position Command → Position ───┤
+                    Control    │
+                               │
 ```
 
 This allows the same controller to operate either as a direct torque/current controller or as a higher-level position-controlled actuator.
