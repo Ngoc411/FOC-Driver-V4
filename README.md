@@ -139,19 +139,19 @@ The following videos demonstrate the motor controller operating in the different
 
 Demonstration of direct current control and the resulting motor response.
 
-<video src="./results/current_control.mov" controls width="800"></video>
+https://github.com/user-attachments/assets/PASTE-YOUR-ASSET-ID-HERE
 
 ### Speed Control
 
 Demonstration of closed-loop speed control using feedback from the MT6816 encoder.
 
-<video src="./results/speed_control.mov" controls width="800"></video>
+https://github.com/user-attachments/assets/PASTE-YOUR-ASSET-ID-HERE
 
 ### Position Control
 
 Demonstration of closed-loop position control using the MT6816 encoder.
 
-<video src="./results/position_control.mov" controls width="800"></video>
+https://github.com/user-attachments/assets/PASTE-YOUR-ASSET-ID-HERE
 
 ## Author
 
