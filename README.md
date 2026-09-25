@@ -64,15 +64,15 @@ The controller is designed as a compact motor-control platform for robotic actua
 
 ## Control Architecture
 
-The firmware provides three **independent control modes**, all based on **PID control**. The user selects the required mode depending on the application.
+The firmware provides three **independent control modes**, with PID-based regulation used throughout the control system. The required mode is selected according to the application.
 
-In **current control**, a PID controller regulates the commanded current, providing direct control of the motor's torque-producing current.
+In **current control**, the commanded current is regulated directly to control the motor's torque-producing current.
 
-In **speed control**, the commanded speed is compared with the measured motor speed from the encoder. The **speed PID controller** generates a current command, which is then passed directly to the current-control loop.
+In **speed control**, the commanded speed is compared with the encoder feedback, and the resulting control output is converted into a current command for the current-control stage.
 
-In **position control**, the commanded position is compared with the encoder position. The **position PID controller** generates a current command, which is also passed directly to the current-control loop.
+In **position control**, the commanded position is compared with the encoder feedback, and the resulting control output is directly converted into a current command.
 
-The three modes share the same current-control and FOC/SVPWM stages, while **speed and position control independently generate the current command** without an intermediate control layer.
+All three modes share the same current-control, FOC, and SVPWM stages. Speed and position control operate independently and both produce the current command directly, with no intermediate speed-control layer between position and current control.
 
 ```text
 ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
