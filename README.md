@@ -1,12 +1,8 @@
 <div align="center">
 
-<table>
-<tr>
-<td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="300"></td>
-<td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="300"></td>
-<td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="300"></td>
-</tr>
-</table>
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/current_ctrl.gif" width="300">
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/speed_ctrl.gif" width="300">
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/position_ctrl.gif" width="300">
 
 </div>
 
@@ -20,19 +16,18 @@ The controller is designed as a compact motor-control platform for robotic actua
 
 ## Features
 
-* **BLDC motor control** using FOC + SVPWM
-* Three independent control modes:
-
-  * **Current control** — A
-  * **Speed control** — rad/s
-  * **Position control** — rad
-* **MT6816 magnetic encoder** for rotor position feedback
-* **20 kHz motor-control loop**
-* **Classical CAN** communication up to **1 Mbps**
-* **DRV8323S** three-phase gate driver
-* Hardware PWM generation using STM32 timers
-* Current sensing and closed-loop current control
-* Designed for integration with external controllers and robotic systems
+- **BLDC motor control** using FOC + SVPWM
+- Three independent control modes:
+  - **Current control** — A
+  - **Speed control** — rad/s
+  - **Position control** — rad
+- **MT6816 magnetic encoder** for rotor position feedback
+- **20 kHz motor-control loop**
+- **Classical CAN** communication up to **1 Mbps**
+- **DRV8323S** three-phase gate driver
+- Hardware PWM generation using STM32 timers
+- Current sensing and closed-loop current control
+- Designed for integration with external controllers and robotic systems
 
 ---
 
@@ -110,14 +105,14 @@ The common FOC stage converts the desired current into the required motor voltag
 
 ## Hardware
 
-| Component       | Description                 |
-| --------------- | --------------------------- |
-| MCU             | STM32G474RET6               |
-| Motor           | 3-phase BLDC                |
-| Encoder         | MT6816 magnetic encoder     |
-| Gate Driver     | DRV8323S                    |
-| CAN Transceiver | SN65HVD230                  |
-| Communication   | Classical CAN, up to 1 Mbps |
+| Component | Description |
+|---|---|
+| MCU | STM32G474RET6 |
+| Motor | 3-phase BLDC |
+| Encoder | MT6816 magnetic encoder |
+| Gate Driver | DRV8323S |
+| CAN Transceiver | SN65HVD230 |
+| Communication | Classical CAN, up to 1 Mbps |
 
 ---
 
@@ -154,24 +149,48 @@ The modular structure allows the motor-control algorithms and hardware interface
 
 ## Results
 
-The following videos demonstrate the motor controller operating in the different control modes.
+The following demonstrations show the motor controller operating in the three independent control modes.
+
+<div align="center">
+
+<table>
+<tr>
+<th>Current Control</th>
+<th>Speed Control</th>
+<th>Position Control</th>
+</tr>
+
+<tr>
+<td>
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/current_ctrl.gif" width="300">
+</td>
+
+<td>
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/speed_ctrl.gif" width="300">
+</td>
+
+<td>
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/position_ctrl.gif" width="300">
+</td>
+</tr>
+</table>
+
+</div>
 
 ### Current Control
 
-Demonstration of direct current control and the resulting motor response.
-
-https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.mov
+Direct current control regulates the commanded motor current and therefore the torque-producing component of the motor current.
 
 ### Speed Control
 
-Demonstration of closed-loop speed control using feedback from the MT6816 encoder.
+Closed-loop speed control regulates the motor speed using feedback from the **MT6816 magnetic encoder**.
 
-https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.mov
 ### Position Control
 
-Demonstration of closed-loop position control using the MT6816 encoder.
+Closed-loop position control regulates the motor position using feedback from the **MT6816 magnetic encoder**.
 
-https://github.com/Ngoc411/FOC-Driver-V4/blob/main/position_ctrl.mov
+---
+
 ## Author
 
 **Ngoc**
