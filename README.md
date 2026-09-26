@@ -1,9 +1,9 @@
 <div align="center">
   <table>
     <tr>
-      <td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="300"></td>
-      <td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.gif" width="300"></td>
-      <td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/position_ctrl.gif" width="300"></td>
+      <td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="250"></td>
+      <td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.gif" width="250"></td>
+      <td><img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/pos_ctrl.gif" width="250"></td>
     </tr>
   </table>
 </div>
