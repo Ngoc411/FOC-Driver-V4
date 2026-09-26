@@ -25,24 +25,29 @@ The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM 
   <em>Field-Oriented Control in action — three independent control modes on the STM32G474RET6.</em>
 </p>
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="33%">
-        <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="280"><br>
-        <sub><b>⚡ Current Control</b><br>Direct torque-current regulation</sub>
-      </td>
-      <td align="center" width="33%">
-        <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.gif" width="280"><br>
-        <sub><b>🌀 Speed Control</b><br>Closed-loop speed regulation</sub>
-      </td>
-      <td align="center" width="33%">
-        <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/pos_ctrl.gif" width="280"><br>
-        <sub><b>🎯 Position Control</b><br>Closed-loop position regulation</sub>
-      </td>
-    </tr>
-  </table>
-</div>
+---
+
+#### ⚡ Current Control
+<p align="center">
+  <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="640"><br>
+  <sub>Direct torque-current regulation</sub>
+</p>
+
+---
+
+#### 🌀 Speed Control
+<p align="center">
+  <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.gif" width="640"><br>
+  <sub>Closed-loop speed regulation using MT6816 feedback</sub>
+</p>
+
+---
+
+#### 🎯 Position Control
+<p align="center">
+  <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/pos_ctrl.gif" width="640"><br>
+  <sub>Closed-loop position regulation using MT6816 feedback</sub>
+</p>
 
 ---
 
