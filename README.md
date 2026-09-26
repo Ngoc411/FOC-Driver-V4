@@ -27,7 +27,7 @@ The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM 
 
 ---
 
-#### ⚡ Current Control
+#### Current Control
 <p align="center">
   <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="640"><br>
   <sub>Direct torque-current regulation</sub>
@@ -35,7 +35,7 @@ The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM 
 
 ---
 
-#### 🌀 Speed Control
+#### Speed Control
 <p align="center">
   <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.gif" width="640"><br>
   <sub>Closed-loop speed regulation using MT6816 feedback</sub>
@@ -43,7 +43,7 @@ The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM 
 
 ---
 
-#### 🎯 Position Control
+#### Position Control
 <p align="center">
   <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/pos_ctrl.gif" width="640"><br>
   <sub>Closed-loop position regulation using MT6816 feedback</sub>
