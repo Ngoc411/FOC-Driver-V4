@@ -3,9 +3,9 @@
 
 <table>
 <tr>
-<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/current_ctrl.gif" width="200">
-<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/speed_ctrl.gif" width="200">
-<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/position_ctrl.gif" width="200">
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/current_ctrl.gif" width="300">
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/speed_ctrl.gif" width="300">
+<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/position_ctrl.gif" width="300">
 </tr>
 </table>
 
