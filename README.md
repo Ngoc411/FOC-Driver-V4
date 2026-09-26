@@ -19,10 +19,10 @@ The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM 
 * Current sensing and closed-loop current control
 * Designed for integration with external controllers and robotic systems
 
-<h3 align="center">🎬 Control Mode Demonstrations</h3>
+<h3 align="center"> Control Mode Demonstrations</h3>
 
 <p align="center">
-  <em>Field-Oriented Control in action — three independent control modes on the STM32G474RET6.</em>
+  <em>Field-Oriented Control — three independent control modes on the STM32G474RET6.</em>
 </p>
 
 ---
