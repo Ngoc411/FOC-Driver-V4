@@ -19,22 +19,29 @@ The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM 
 * Current sensing and closed-loop current control
 * Designed for integration with external controllers and robotic systems
 
-<div align="center">
-  <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="600">
-  <br>
-  <em>Current control</em>
-</div>
+<h3 align="center">🎬 Control Mode Demonstrations</h3>
+
+<p align="center">
+  <em>Field-Oriented Control in action — three independent control modes on the STM32G474RET6.</em>
+</p>
 
 <div align="center">
-  <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.gif" width="600">
-  <br>
-  <em>Speed control</em>
-</div>
-
-<div align="center">
-  <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/pos_ctrl.gif" width="600">
-  <br>
-  <em>Position control</em>
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/current_ctrl.gif" width="280"><br>
+        <sub><b>⚡ Current Control</b><br>Direct torque-current regulation</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/speed_ctrl.gif" width="280"><br>
+        <sub><b>🌀 Speed Control</b><br>Closed-loop speed regulation</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/Ngoc411/FOC-Driver-V4/blob/main/pos_ctrl.gif" width="280"><br>
+        <sub><b>🎯 Position Control</b><br>Closed-loop position regulation</sub>
+      </td>
+    </tr>
+  </table>
 </div>
 
 ---
