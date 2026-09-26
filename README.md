@@ -145,48 +145,6 @@ FOC-Driver-V4/
 
 The modular structure allows the motor-control algorithms and hardware interfaces to be developed and maintained independently.
 
----
-
-## Results
-
-The following demonstrations show the motor controller operating in the three independent control modes.
-
-<div align="center">
-
-<table>
-<tr>
-<th>Current Control</th>
-<th>Speed Control</th>
-<th>Position Control</th>
-</tr>
-
-<tr>
-<td>
-<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/current_ctrl.gif" width="300">
-</td>
-
-<td>
-<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/speed_ctrl.gif" width="300">
-</td>
-
-<td>
-<img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/position_ctrl.gif" width="300">
-</td>
-</tr>
-</table>
-
-</div>
-
-### Current Control
-
-Direct current control regulates the commanded motor current and therefore the torque-producing component of the motor current.
-
-### Speed Control
-
-Closed-loop speed control regulates the motor speed using feedback from the **MT6816 magnetic encoder**.
-
-### Position Control
-
 Closed-loop position control regulates the motor position using feedback from the **MT6816 magnetic encoder**.
 
 ---
