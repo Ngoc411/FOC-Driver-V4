@@ -1,3 +1,7 @@
+
+
+
+# FOC Driver V4
 <div align="center">
 
 <img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/current_ctrl.gif" width="200">
@@ -5,10 +9,6 @@
 <img src="https://raw.githubusercontent.com/Ngoc411/FOC-Driver-V4/main/position_ctrl.gif" width="200">
 
 </div>
-
-
-# FOC Driver V4
-
 Firmware for a custom **BLDC motor-control board** based on the **STM32G474RET6 MCU**. The project implements **Field-Oriented Control (FOC)** with **Space Vector PWM (SVPWM)** and provides three independent control modes: **current, speed, and position control**.
 
 The controller is designed as a compact motor-control platform for robotic actuators and other motion-control applications. Motor position is measured using an **MT6816 magnetic encoder**, while an external controller can communicate with the board through **Classical CAN**.
